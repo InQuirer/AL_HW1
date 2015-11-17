@@ -5,15 +5,19 @@ import java.util.Stack;
 
 public class Friends {
 	
-	static int[][] adjacencyMatrix = null;
-	static int[] pair = null;
-	static Stack<Integer> visited = new Stack<Integer>();
-	static Stack<Node> stack = new Stack<Node>();
+	static int[][] adjacencyMatrix;
+	static int[] pair;
+	static Stack<Integer> visited;
+	static Stack<Node> stack;
 	static Node answer;
 	//
     public static void bfs(int[][] adjacencyMatrix, int[] pair){
     	Friends.adjacencyMatrix = adjacencyMatrix;
     	Friends.pair = pair;
+    	Friends.visited = new Stack<Integer>();
+    	Friends.stack = new Stack<Node>();
+    	answer = null;
+    	// init end
     	int startPoint = pair[0];
     	int endPoint = pair[1];
     	Node node = new Node(startPoint);
